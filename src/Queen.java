@@ -20,8 +20,6 @@ public class Queen extends Piece{
     }
     public static boolean canMove(Square destination,Piece piece){
 
-        System.out.println("quennin movena hoş gelmişşiniz");
-
         boolean isOtherPiece = false;
 
         int rowD = destination.getRow();
@@ -43,9 +41,7 @@ public class Queen extends Piece{
             int row, col;
             for (row = minRow + 1, col = minCol + 1; row < maxRow; row++, col++) {
                 System.out.println("row" + row + "col" + col);
-                System.out.println("girdi2");
                 if (ChessBoard.squares[row][col].getPiece() != null) {
-                    System.out.println("hjdfl");
                     isOtherPiece = true;
                 }
             }
@@ -54,9 +50,7 @@ public class Queen extends Piece{
             int col;
             for (col = minCol + 1; col < maxCol; col++) {
                 System.out.println("col" + col);
-                System.out.println("girdi2");
                 if (ChessBoard.squares[rowD][col].getPiece() != null) {
-                    System.out.println("hjdfl");
                     isOtherPiece = true;
                 }
             }
@@ -64,19 +58,15 @@ public class Queen extends Piece{
             int row;
             for (row = minRow + 1; row < maxRow; row++) {
                 System.out.println("row" + row);
-                System.out.println("girdi2");
                 if (ChessBoard.squares[row][colD].getPiece() != null) {
-                    System.out.println("hjdfl");
                     isOtherPiece = true;
                 }
             }
         }
 
         if ((Math.abs(rowD - rowL) == Math.abs(colD - colL) || (Math.abs(rowD - rowL) == 0 || Math.abs(colD - colL) == 0)) && isOtherPiece == false){
-            System.out.println("ee niye gitmiyo");
             return true;
         } else {
-            System.out.println("hareket edemez");
             return false;
         }
 
